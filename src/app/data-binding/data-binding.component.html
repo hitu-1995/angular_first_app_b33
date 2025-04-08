@@ -1,0 +1,28 @@
+<body [style.background-color]="colorName">
+
+    <label>Enter Your Faveriote color"</label><br>
+<input type="text" [(ngModel)]="colorName"><br>
+
+<label>Course Name</label><br>
+<input type="text" [(ngModel)]="course"><br>
+<h2>Course is {{colorName}}</h2>
+  
+<hr>
+
+
+<button (click)="setDepartment('HR')"> Call SetDepartment</button><br><br>
+<h2>Department is {{getDepartment()}}</h2>
+
+<hr>
+
+<h2>Criketer Name is {{name}}</h2>
+
+<!-- <div [align]="a1" [style]="color">
+
+    <label>Data  :  </label>
+    <input [type]="t1" [placeholder]="p1">
+
+</div> -->
+
+
+</body>

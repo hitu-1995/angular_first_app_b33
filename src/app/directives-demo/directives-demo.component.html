@@ -1,0 +1,108 @@
+<p>directives-demo works!</p>
+
+
+<div appApp>
+   <h1>Welcome to Angular Course, Pune</h1>            
+</div>
+<br>
+<hr>
+<br>
+<div appApp>
+   <h1>Welcome to Angular Course, Akurdi</h1>            
+</div>
+
+
+<br>
+<hr>
+<br>
+<div [ngClass]="getDesignClass()">
+   <h1>Welcome to Angular</h1>            
+</div>
+
+ <br><hr>
+       <div [ngStyle]="getMyDesign2()">
+           <h1>Welcome to Angular</h1>            
+       </div>
+
+     <br><br><hr>
+     <h3>HDFC</h3>
+     <h3>SBI</h3>
+     <h3>Axis</h3>
+     
+      <div>
+         <input type="text" [(ngModel)]="key">
+      </div>
+  <div [ngSwitch]="key">
+   
+      <div *ngSwitchCase="''">
+        <h2>Please Select Any Option</h2>
+     </div>
+        <div *ngSwitchCase="'HDFC'">
+              <h2>Thanks for Selecting HDFC Bank</h2>
+        </div>
+        
+        <div *ngSwitchCase="'Axis'">
+           <h2>Thanks for Selecting Axis Bank</h2>
+        </div>
+        <div *ngSwitchCase="'SBI'">
+         <h2>Thanks for Selecting SBI Bank</h2>
+      </div>
+      <div *ngSwitchDefault>
+         <h2>Please Select Correct Option</h2>
+      </div>
+      
+  </div>
+<hr>
+<table border="5px" cellpadding="8" cellspacing="0" >
+    
+    <thead>
+       <tr>
+          <th *ngFor="let header of headers">{{header}}</th>
+       </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let emp of empList">
+            <td>{{emp.eid}}</td>
+            <td>{{emp.ename}}</td>
+            <td>{{emp.eadept}}</td>
+            <td>{{emp.esalary}}</td>
+            <td>{{emp.isPresent}}</td>
+        </tr> 
+    </tbody>
+</table>
+<hr>
+<div *ngFor="let n of name odd as o">
+      <div *ngIf="o else pqr" style="color: red;">
+        <h2>{{n}}</h2>
+      </div>
+      <ng-template #pqr>
+        <h2 style="color: purple;">{{n}}</h2>
+       </ng-template>
+ </div>
+<hr>
+<div *ngFor="let n of name index as i">
+    <h2>Name at Index {{i}}  Is {{n}}</h2>
+ </div>
+<hr>
+ <div *ngFor="let n of name">
+    <h2>{{n}}</h2>
+ </div>
+<hr>
+ <div *ngIf="num>0 else abc">
+    <h1>Number {{num}} is +ve </h1>
+ </div>
+ 
+   <ng-template #abc>
+    <h1>Number {{num}} is -ve </h1>
+   </ng-template>
+ 
+ 
+ <hr>
+ <div *ngIf="name.length>0 else xyz">
+    <h1>Name array elements :: {{name}}</h1>
+ </div>
+ <ng-template #xyz>
+    <h1>Please insert elements in array</h1>
+   </ng-template>
+ 

@@ -3,16 +3,43 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DemoComponent } from './demo/demo.component';
+import { HelloComponent } from './hello/hello.component';
+import { CollegeModule } from './modules/college/college.module';
+import { DepartmentComponent } from './modules/college/department/department.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { FormsModule } from '@angular/forms';
+import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { SquarePipe } from './my-pipes/square.pipe';
+import { EvenOddPipe} from './my-pipes/even-odd.pipe';
+import { PrimePipe } from './my-pipes/prime.pipe';
+import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
+import { AppDirective } from './my-custom-dir/app.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoComponent,
+    HelloComponent,
+    ContactusComponent,
+    DataBindingComponent,
+    PipeExampleComponent,
+    SquarePipe,
+    EvenOddPipe,
+    PrimePipe,
+    DirectivesDemoComponent,
+    AppDirective,
+   
+    //DepartmentComponent   // we will register Component , pipes, directives
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule,        // we will register only Modules present in project
+    AppRoutingModule,
+    CollegeModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [],     // we will register all services 
+  bootstrap: [AppComponent]  // we will register parent component 
 })
 export class AppModule { }
