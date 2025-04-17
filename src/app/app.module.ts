@@ -9,13 +9,15 @@ import { CollegeModule } from './modules/college/college.module';
 import { DepartmentComponent } from './modules/college/department/department.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { SquarePipe } from './my-pipes/square.pipe';
 import { EvenOddPipe} from './my-pipes/even-odd.pipe';
 import { PrimePipe } from './my-pipes/prime.pipe';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { AppDirective } from './my-custom-dir/app.directive';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { RactiveFormComponent } from './ractive-form/ractive-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { AppDirective } from './my-custom-dir/app.directive';
     PrimePipe,
     DirectivesDemoComponent,
     AppDirective,
+    TemplateDrivenComponent,
+    RactiveFormComponent,
    
     //DepartmentComponent   // we will register Component , pipes, directives
   ],
@@ -37,7 +41,8 @@ import { AppDirective } from './my-custom-dir/app.directive';
     BrowserModule,        // we will register only Modules present in project
     AppRoutingModule,
     CollegeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],     // we will register all services 
   bootstrap: [AppComponent]  // we will register parent component 

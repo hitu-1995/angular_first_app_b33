@@ -1,0 +1,18 @@
+
+ 
+  <div align="center">
+    <form (ngSubmit)="submitData()">
+
+        <label for="username">Username</label>
+        <input type="text"  id="username" [(ngModel)]="loginForm.username" name="username">
+       <br><br>
+        <label for="password">Password</label>
+        <input type="text"  id="password" [(ngModel)]="loginForm.password" name="password">
+        <br><br>
+        <input type="submit" value="SUBMIT">
+   </form>
+   <br><br>
+   <!-- <h1>{{loginForm.username}}</h1><br>
+   <h1>{{loginForm.password}}</h1>
+    -->
+  </div>

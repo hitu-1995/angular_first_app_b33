@@ -1,0 +1,26 @@
+
+ 
+  <div align="center">
+    <form [formGroup]="loginForm" (ngSubmit)="submitData()">
+
+        <label for="username">Username</label>
+        <input type="text"  id="username" formControlName="username" name="username">
+       <br><br>
+        <label for="password">Password</label>
+        <input type="text"  id="password" formControlName="password" name="password">
+        <br><br>
+
+        <div formGroupName="address">
+
+            <label for="city">City</label>
+            <input type="text"  id="city" formControlName="city" name="city">
+           <br><br>
+            <label for="area">Area</label>
+            <input type="text"  id="area" formControlName="area" name="area">
+            <br><br>
+    
+        </div>
+        <input type="submit" value="SUBMIT">
+   </form>
+   <br><br>
+  </div>
