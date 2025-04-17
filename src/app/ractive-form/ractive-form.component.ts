@@ -9,22 +9,47 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RactiveFormComponent {
 
-     loginForm = new FormGroup({
-        username : new FormControl(),
-        password : new FormControl(),
+     loginForm! : FormGroup;
+     loginType : string = 'user';  // default user login
 
-        address : new FormGroup({
-          city : new FormControl(),
-          area : new FormControl()
-        })
-      })
+     constructor() {
+         this.setLoginForm('user');
+     }
+
+     setLoginForm(type : string) {
+     
+           alert(type+" Login............")
+            this.loginType = type;
+           if(type==='user')
+           {
+            this.loginForm = new FormGroup({
+                username : new FormControl(),
+                password : new FormControl()
+            });
+
+           } else if(type==='admin') {
+            this.loginForm = new FormGroup({
+              adminId : new FormControl(),
+              admiKey : new FormControl(),
+              password : new FormControl()
+            })
+           }
+      }
+
+    //  loginForm = new FormGroup({
+    //     username : new FormControl(),
+    //     password : new FormControl(),
+
+    //     address : new FormGroup({
+    //       city : new FormControl(),
+    //       area : new FormControl()
+    //     })
+    //   })
 
      submitData() {
   
         alert("Submit...........")
-        console.log(this.loginForm.value.username);
-        console.log(this.loginForm.value.password);
-        console.log(this.loginForm.value.address?.city);
-        console.log(this.loginForm.value.address?.area);
+       
+          console.log('Login Form Data...',this.loginForm.value);
      }
 }

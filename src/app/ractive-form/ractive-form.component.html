@@ -1,6 +1,36 @@
+<br><br><hr>
+<div align="center">
+    <button (click)="setLoginForm('user')">User Login</button><br><br>
+    <button (click)="setLoginForm('admin')">Admin Login</button>
+</div>
+ <br><br><hr><br>
+ <div align="center">
 
- 
-  <div align="center">
+  <form [formGroup]="loginForm" (ngSubmit)="submitData()">
+
+       <div *ngIf="loginType==='user'">
+        <label for="username">Username  </label>
+        <input type="text" formControlName="username"/><br><br>
+        <label for="password">Password </label>
+        <input type="text" formControlName="password"/>
+       </div>
+       <div *ngIf="loginType==='admin'">
+        
+        <label for="adminId">Admin Id  </label>
+        <input type="text" formControlName="adminId"/><br><br>
+
+        <label for="admiKey">Admin Key </label>
+        <input type="text" formControlName="admiKey"/><br><br>
+      
+        <label for="password">Password </label>
+        <input type="text" formControlName="password"/>
+
+      </div>
+      <button type="submit">Login</button>
+  </form>
+ </div>
+
+  <!-- <div align="center">
     <form [formGroup]="loginForm" (ngSubmit)="submitData()">
 
         <label for="username">Username</label>
@@ -23,4 +53,4 @@
         <input type="submit" value="SUBMIT">
    </form>
    <br><br>
-  </div>
+  </div> -->
