@@ -1,0 +1,7 @@
+<p>parent works!</p>
+<h3>Message From Child :  {{msgFromChild}}</h3>
+ <!-- we wanted to pass value from here  -->
+<div>
+    <app-child [name]="value" (notify)="recieveMessage($event)"></app-child>  
+
+</div>

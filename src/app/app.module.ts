@@ -18,6 +18,9 @@ import { DirectivesDemoComponent } from './directives-demo/directives-demo.compo
 import { AppDirective } from './my-custom-dir/app.directive';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { RactiveFormComponent } from './ractive-form/ractive-form.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { RactiveFormComponent } from './ractive-form/ractive-form.component';
     AppDirective,
     TemplateDrivenComponent,
     RactiveFormComponent,
+    FormValidationComponent,
+    ParentComponent,
+    ChildComponent,
    
     //DepartmentComponent   // we will register Component , pipes, directives
   ],

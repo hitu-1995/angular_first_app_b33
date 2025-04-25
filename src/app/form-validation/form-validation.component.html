@@ -1,0 +1,80 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <h2>Welcome To Angular Classes</h2>
+        </div>
+
+             <form [formGroup]="registrationForm" (ngSubmit)="saveData()">
+
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name *" formControlName="name"/>
+                                <div *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+                                    <div *ngIf="registrationForm.get('name')?.errors?.['required']">
+                                        <P style="color: red;">*Name is Required</P>
+                                    </div>
+                                 </div>
+
+                            </div><br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Email" formControlName="email"/>
+                               
+                                 <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+                                    <div *ngIf="registrationForm.get('email')?.errors?.['required']">
+                                        <P style="color: red;">*Email is Required</P>
+                                    </div>
+                                    <div *ngIf="registrationForm.get('email')?.errors?.['email']">
+                                        <P style="color: red;">*Invalid Email</P>
+                                    </div>
+                                 </div>
+
+                            </div>
+                           
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Password *" formControlName="password"/>
+                                <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+                                    <div *ngIf="registrationForm.get('password')?.errors?.['required']">
+                                        <P style="color: red;">*Password is Required</P>
+                                    </div>
+                                    <div *ngIf="registrationForm.get('password')?.errors?.['pattern']">
+                                        <P style="color: red;">*Invalid Password</P>
+                                    </div>
+                                 </div>
+                            </div><br>
+                           
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your  Mobile*" formControlName="mobile" 
+                                [ngClass]="{'is-invalid': registrationForm.get('mobile')?.invalid && registrationForm.get('mobile')?.touched }"/>
+                                <div *ngIf="registrationForm.get('mobile')?.invalid && registrationForm.get('mobile')?.touched">
+                                    <div *ngIf="registrationForm.get('mobile')?.errors?.['required']">
+                                        <P style="color: red;">*Mobile No is Required</P>
+                                    </div>
+                                    <div *ngIf="registrationForm.get('mobile')?.errors?.['pattern']">
+                                        <P style="color: red;">*Invalid Mobile No</P>
+                                    </div>
+                                    <div *ngIf="registrationForm.get('mobile')?.errors?.['minlength'] || registrationForm.get('mobile')?.errors?.['maxlength']">
+                                        <P style="color: red;">*Mobile Number must be 10 digit</P>
+                                    </div>
+                                 </div>
+                            </div><br>
+                          
+    
+                        </div>
+                    </div><br>
+                    <button type="submit" >Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+
+             </form>
+    </div>
+</div>
